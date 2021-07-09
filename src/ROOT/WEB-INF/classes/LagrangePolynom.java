@@ -16,11 +16,17 @@ public class LagrangePolynom extends HttpServlet
         PrintWriter writer = response.getWriter();
  
         String nodes = request.getParameter("Nodes");
+        String start = request.getParameter("Start");
+        String end = request.getParameter("End");
+        String step = request.getParameter("Step");
         String[] method = request.getParameterValues("Method");
          
         try
 	{
             writer.println("<p>Nodes: " + nodes + "</p>");
+            writer.println("<p>Start: " + start + "</p>");
+            writer.println("<p>End: " + end + "</p>");
+            writer.println("<p>Step: " + step + "</p>");
             writer.println("<p>Method: " + method[0] + "</p>");
         }
 	finally
