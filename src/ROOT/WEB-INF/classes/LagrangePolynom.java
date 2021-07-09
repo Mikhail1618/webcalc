@@ -33,6 +33,17 @@ public class LagrangePolynom extends HttpServlet
 	{
             writer.close();  
         }
+
+
+        Process process = Runtime.getRuntime().exec("ls -l");
+
+        StreamGobbler streamGobbler = 
+            new StreamGobbler(process.getInputStream(), System.out::println);
+
+        Executors.newSingleThreadExecutor().submit(streamGobbler);
+
+        int exitCode = process.waitFor();
+
     }
 
 }
