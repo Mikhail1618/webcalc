@@ -21,7 +21,7 @@ public class NewtonPolynom extends HttpServlet
         try
 	{
             writer.println("<p>Nodes: " + nodes + "</p>");
-            writer.println("<p>Method: " + method + "</p>");
+            writer.println("<p>Method: " + method[0] + "</p>");
         }
 	finally
 	{
