@@ -16,7 +16,7 @@ public class NewtonPolynom extends HttpServlet
         PrintWriter writer = response.getWriter();
  
         String nodes = request.getParameter("Nodes");
-        String method = request.getParameterValues("Method");
+        String[] method = request.getParameterValues("Method");
          
         try
 	{
