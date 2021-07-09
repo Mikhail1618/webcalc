@@ -36,9 +36,6 @@ public class LagrangePolynom extends HttpServlet
 
 
         Process process = Runtime.getRuntime().exec("ls -l");
-
-        int exitCode = process.waitFor();
-
     }
 
 }
