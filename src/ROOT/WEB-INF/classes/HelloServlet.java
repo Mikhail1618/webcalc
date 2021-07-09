@@ -7,16 +7,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
  
 @WebServlet("/hello")
-public class HelloServlet extends HttpServlet {
- 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         
+public class HelloServlet extends HttpServlet 
+{
+     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+     {    
         response.setContentType("text/html");
+
         PrintWriter writer = response.getWriter();
-        try {
-            writer.println("<h2>Hello from HelloServlet</h2>");
-        } finally {
+	String id = request.getParameter("id");
+
+        try 
+	{
+            writer.println("<h2>Hello from HelloServlet. id = " + id + "</h2>");
+        }
+	finally
+	{
             writer.close();  
         }
-    }
+     }
+
 }

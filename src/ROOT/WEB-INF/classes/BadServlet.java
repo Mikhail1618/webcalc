@@ -19,4 +19,4 @@ public class BadServlet extends HttpServlet {
             writer.close();  
         }
     }
-//} < error
+}
