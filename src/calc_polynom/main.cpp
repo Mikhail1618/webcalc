@@ -3,10 +3,15 @@
 
 int main(int argc, char ** argv)
 {
-    if(argc != 2)
+    if (argc != 5)
     {
-	std::cerr << "number of arguments != 2\n";
+	std::cerr << "number of arguments != 5\n";
 	return 1;
+    }
+    else
+    {
+        for (int i = 0; i < argc; ++i)
+            std::cout << argv[i] << "\n";
     }
 
     Point2 *p = new Point2[3];
@@ -23,8 +28,8 @@ int main(int argc, char ** argv)
 
     Lagrange polynom(data);
 
-    for(double xi = data.x_start; xi < data.x_end + data.step; xi += data.step)
-        std::cout << "(" << xi << ";" << polynom.F(xi) << ")\n";
+    //for (double xi = data.x_start; xi < data.x_end + data.step; xi += data.step)
+        //std::cout << "(" << xi << ";" << polynom.F(xi) << ")\n";
 
     return 0;
 }
