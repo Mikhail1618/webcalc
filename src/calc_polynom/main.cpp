@@ -3,6 +3,8 @@
 #include<fstream>
 #include<algorithm>
 
+int count = 0;
+
 
 Point2 * getPoints(char * str)
 {
@@ -14,7 +16,7 @@ Point2 * getPoints(char * str)
         if (s.at(i) == ';')
             ++n;
 
-   //std::string * mas = new std::string[n];
+    count = n;
     Point2 * p = new Point2[n];
 
     s.erase(std::remove(s.begin(), s.end(), '('), s.end());
@@ -34,17 +36,11 @@ Point2 * getPoints(char * str)
             p[k].y = std::stod(token);
             ++k;
         }
-        //mas[j] = token;
         ++j;
         s.erase(0, pos + 1);
     }
-
     p[k].y = std::stod(s);
-    //mas[j] = s;
 
-    //for (int i = 0; i < n; i+=2)
-        
-        //std::cout << mas[i] << " " << mas[i+1] << "\n";
     return p;
 }
 
@@ -53,33 +49,21 @@ int main(int argc, char ** argv)
 {
     if (argc != 5)
     {
-	std::cout << "number of arguments != 5\n";
+	std::cerr << "number of arguments != 5\n";
 	return 1;
-    }
-   
-   
-        for (int i = 0; i < argc; ++i)
-            std::cout << argv[i] << "\n";
-   
-
-    //fun(argv[1]);
-
-    Point2 *p = new Point2[3];
-    p[0] = Point2(-1.0, 1.0);
-    p[1] = Point2(0.0, 0.0);
-    p[2] = Point2(1.0, 1.0);
+    }   
 
     Lagrange_data data;
     data.x_start = std::stod(argv[2]);
     data.x_end = std::stod(argv[3]);
     data.step = std::stod(argv[4]);
-    data.arr_points = p;
-    data.count_points = 3;
+    data.arr_points = getPoints(argv[1]);
+    data.count_points = count;
 
     Lagrange polynom(data);
 
-    //for (double xi = data.x_start; xi < data.x_end + data.step; xi += data.step)
-        //std::cout << "(" << xi << ";" << polynom.F(xi) << ")\n";
+    for (double xi = data.x_start; xi < data.x_end + data.step; xi += data.step)
+        std::cout << "(" << xi << ";" << polynom.F(xi) << ")\n";
 
     std::ofstream outfile ("test.txt");
 
