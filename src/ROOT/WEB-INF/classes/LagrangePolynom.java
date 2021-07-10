@@ -52,7 +52,7 @@ public class LagrangePolynom extends HttpServlet
        while ((s = stdInput.readLine()) != null)
        {
             writer.println(s);
-            writer.println("&#10;");
+            writer.println("<br>");//"&#10;");
        }
        writer.println("</p>");
        writer.close();
