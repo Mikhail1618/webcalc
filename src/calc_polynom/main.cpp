@@ -21,7 +21,8 @@ Point2 * getPoints(char * str)
 
     s.erase(std::remove(s.begin(), s.end(), '('), s.end());
     s.erase(std::remove(s.begin(), s.end(), ')'), s.end());
-    
+
+    int k = 0;    
     int pos = 0, pos2;
     std::string token, token2;
     while ((pos = s.find(' ')) != std::string::npos)
@@ -31,11 +32,14 @@ Point2 * getPoints(char * str)
         {
             token2 = token.substr(0, pos2);
             std::cout << "p1->" << token2 << "\n";
+            p[k].x = std::stod(token2);
             std::cout << "p1->" << token.substr(pos2+1, token.length()-1) << "\n";
+            p[k].y = std::stod(token.substr(pos2+1, token.length()-1));
             //token.erase(0, token);
         }
         //std::cout << token << "\n";
         s.erase(0, pos + 1);
+        ++k;
     }
     pos2 = s.find(';');
     std::cout << "p1->" << s.substr(0, pos2) << "\n";
@@ -43,8 +47,8 @@ Point2 * getPoints(char * str)
     //std::cout << s << "\n";
 
 
-//for (int i = 0; i < count; ++i)
-//std::cout << " x-> " << p[i].x << " y-> " << p[i].y << "\n";
+for (int i = 0; i < count; ++i)
+std::cout << " x-> " << p[i].x << " y-> " << p[i].y << "\n";
 
 
 
