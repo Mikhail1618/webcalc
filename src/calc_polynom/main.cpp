@@ -12,7 +12,7 @@ void fun(char * str)
 
     for (int i = 0; i < s.length(); ++i)
         if (s.at(i) == ';')
-            ++n;
+            n+=2;
 
     std::string * mas = new std::string[n];
 
@@ -32,13 +32,13 @@ void fun(char * str)
         token = s.substr(0, pos);
         mas[j] = token;
         ++j;
-        std::cout << token << std::endl;
+        //std::cout << token << std::endl;
         s.erase(0, pos + 1);
     }
     mas[j] = s;
-    std::cout << s << "\n";
+    //std::cout << s << "\n";
 
-    for (int i = 0; i < 2*n; i+=2)
+    for (int i = 0; i < n; i+=2)
         std::cout << mas[i] << " " << mas[i+1] << "\n";
 
 }
