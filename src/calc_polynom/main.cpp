@@ -6,8 +6,8 @@ int main(int argc, char ** argv)
 {
     if (argc != 5)
     {
-	std::cerr << "number of arguments != 5\n";
-	return 1;
+	std::cout << "number of arguments != 5\n";
+	//return 1;
     }
     else
     {
@@ -34,7 +34,7 @@ int main(int argc, char ** argv)
 
     std::ofstream outfile ("test.txt");
 
-    outfile << argc << std::endl;
+    outfile << "hello" << std::endl;
 
     outfile.close();
 
