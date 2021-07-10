@@ -29,10 +29,10 @@ Point2 * getPoints(char * str)
     while ((pos = s.find(' ')) != std::string::npos)
     {
         token = s.substr(0, pos);
-        std::cout << token.length() << "\n";
+        std::cout << token << "\n";
         s.erase(0, pos + 1);
     }
-    std::cout << token.length() << "\n";
+    std::cout << token << "\n";
 
 
 //for (int i = 0; i < count; ++i)
