@@ -39,7 +39,7 @@ std::string * substrs(char * str)
         s.erase(0, pos + 1);
     }
 
-    p[k] = std::stod(s);
+    p[k].y = std::stod(s);
     //mas[j] = s;
 
     //for (int i = 0; i < n; i+=2)
