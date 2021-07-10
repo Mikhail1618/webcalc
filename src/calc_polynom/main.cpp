@@ -31,12 +31,15 @@ Point2 * getPoints(char * str)
         {
             token2 = token.substr(0, pos2);
             std::cout << "p1->" << token2 << "\n";
-            std::cout << "p1->" << token.substr(pos2, token.length()-1) << "\n";
+            std::cout << "p1->" << token.substr(pos2+1, token.length()-1) << "\n";
             //token.erase(0, token);
         }
         //std::cout << token << "\n";
         s.erase(0, pos + 1);
     }
+    pos2 = s.find(';');
+    std::cout << "p1->" << s.substr(0, pos2) << "\n";
+    std::cout << "p1->" << s.substr(pos2+1, s.length()-1) << "\n";
     //std::cout << s << "\n";
 
 
