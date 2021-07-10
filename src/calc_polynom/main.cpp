@@ -32,8 +32,10 @@ Point2 * getPoints(char * str)
 //std::cout << token << "\n";
 
         if (first)
+        {
             p[k].x = std::stod(token);
             first = false;
+        }
         else
         {
             p[k].y = std::stod(token);
