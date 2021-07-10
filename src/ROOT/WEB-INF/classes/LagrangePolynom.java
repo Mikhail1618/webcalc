@@ -23,7 +23,7 @@ public class LagrangePolynom extends HttpServlet
         String step = request.getParameter("Step");
         String[] method = request.getParameterValues("Method");
 
-        String[] commands = { "bash", "-c", "polynom.bin" };
+        String[] commands = { "polynom.bin" };
  
         try
 	{
