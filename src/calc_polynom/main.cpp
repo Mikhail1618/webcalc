@@ -80,7 +80,7 @@ int main(int argc, char ** argv)
 
     std::ofstream outfile ("test.txt");
 
-    outfile << "X\t\tY" << std::endl;
+    outfile << "#X\t\tY" << std::endl;
 
     for (double xi = data.x_start; xi < data.x_end; xi += data.step)
         outfile << xi << "\t\t" << polynom.F(xi) << "\n";
