@@ -11,7 +11,7 @@ void fun(char * str)
     int n = 0
 
     for (int i = 0; i < s.length(); ++i)
-        if (s[i] == ';')
+        if (s.at(i) == ';')
             ++n;
 
     std::string open = "(";
