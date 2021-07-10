@@ -26,28 +26,12 @@ Point2 * getPoints(char * str)
     int j = 0, k = 0;
     bool first = true;
     std::string token;
-    while ((pos = s.find(';')) != std::string::npos)
+    while ((pos = s.find(' ')) != std::string::npos)
     {
         token = s.substr(0, pos);
-std::cout << token.length() << "\n";
-
-        if (first)
-        {
-            p[k].x = std::stod(token);
-            first = false;
-//std::cout << "x->" << p[k].x << "\n";
-        }
-        else
-        {
-            p[k].y = std::stod(token);
-            ++k;
-            first = true;
-//std::cout << "y->" << p[k].y << "\n";
-        }
-        ++j;
+        std::cout << token.length() << "\n";
         s.erase(0, pos + 1);
     }
-    p[k].y = std::stod(s);
 
 //for (int i = 0; i < count; ++i)
 //std::cout << " x-> " << p[i].x << " y-> " << p[i].y << "\n";
