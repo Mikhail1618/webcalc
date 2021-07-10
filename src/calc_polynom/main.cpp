@@ -31,9 +31,9 @@ Point2 * getPoints(char * str)
         pos2 = token.find(';');
         {
             token2 = token.substr(0, pos2);
-            std::cout << "p1->" << token2 << "\n";
+            //std::cout << "p1->" << token2 << "\n";
             p[k].x = std::stod(token2);
-            std::cout << "p1->" << token.substr(pos2+1, token.length()-1) << "\n";
+            //std::cout << "p1->" << token.substr(pos2+1, token.length()-1) << "\n";
             p[k].y = std::stod(token.substr(pos2+1, token.length()-1));
             //token.erase(0, token);
         }
@@ -42,15 +42,15 @@ Point2 * getPoints(char * str)
         ++k;
     }
     pos2 = s.find(';');
-    std::cout << "p1->" << s.substr(0, pos2) << "\n";
+    //std::cout << "p1->" << s.substr(0, pos2) << "\n";
     p[k].x = std::stod(s.substr(0, pos2));
-    std::cout << "p1->" << s.substr(pos2+1, s.length()-1) << "\n";
+    //std::cout << "p1->" << s.substr(pos2+1, s.length()-1) << "\n";
     p[k].y = std::stod(s.substr(pos2+1, s.length()-1));
     //std::cout << s << "\n";
 
 
 for (int i = 0; i < count; ++i)
-std::cout << " x-> " << p[i].x << " y-> " << p[i].y << "\n";
+//std::cout << " x-> " << p[i].x << " y-> " << p[i].y << "\n";
 
 
 
@@ -80,7 +80,10 @@ int main(int argc, char ** argv)
 
     std::ofstream outfile ("test.txt");
 
-    outfile << "hello" << std::endl;
+    outfile << "X\t\tY" << std::endl;
+
+    for (double xi = data.x_start; xi < data.x_end; xi += data.step)
+        outfile << xi << "\t\t" << polynom.F(xi) << "\n";
 
     outfile.close();
 
