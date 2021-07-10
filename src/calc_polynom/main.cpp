@@ -78,7 +78,7 @@ int main(int argc, char ** argv)
     for (double xi = data.x_start; xi < data.x_end; xi += data.step)
         std::cout << "(" << xi << ";" << polynom.F(xi) << ")\n";
 
-    std::ofstream outfile ("test.txt");
+    std::ofstream outfile ("points.txt");
 
     outfile << "#X\t\tY" << std::endl;
 
