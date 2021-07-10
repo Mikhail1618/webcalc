@@ -32,7 +32,7 @@ Point2 * getPoints(char * str)
         std::cout << token << "\n";
         s.erase(0, pos + 1);
     }
-    std::cout << token << "\n";
+    std::cout << s << "\n";
 
 
 //for (int i = 0; i < count; ++i)
