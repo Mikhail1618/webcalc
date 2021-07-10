@@ -4,7 +4,7 @@
 #include<algorithm>
 
 
-void fun(char * str)
+std::string * substrs(char * str)
 {
     std::string s(str);
 
@@ -12,28 +12,40 @@ void fun(char * str)
 
     for (int i = 0; i < s.length(); ++i)
         if (s.at(i) == ';')
-            n+=2;
+            ++n;
 
-    std::string * mas = new std::string[n];
+   //std::string * mas = new std::string[n];
+    Point2 * p = new Point2[n];
 
     s.erase(std::remove(s.begin(), s.end(), '('), s.end());
     s.erase(std::remove(s.begin(), s.end(), ')'), s.end());
     
     int pos = 0;
-    int j = 0;
+    int j = 0, k = 0;
     std::string token;
     while ((pos = s.find(';')) != std::string::npos)
     {
         token = s.substr(0, pos);
-        mas[j] = token;
+
+        if (j%2 == 0)
+            p[k].x = std::stod(token);
+        else
+        {
+            p[k].y = std::stod(token);
+            ++k;
+        }
+        //mas[j] = token;
         ++j;
         s.erase(0, pos + 1);
     }
-    mas[j] = s;
 
-    for (int i = 0; i < n; i+=2)
-        std::cout << mas[i] << " " << mas[i+1] << "\n";
+    p[k] = std::stod(s);
+    //mas[j] = s;
 
+    //for (int i = 0; i < n; i+=2)
+        
+        //std::cout << mas[i] << " " << mas[i+1] << "\n";
+    return mas;
 }
 
 
@@ -50,7 +62,7 @@ int main(int argc, char ** argv)
             std::cout << argv[i] << "\n";
    
 
-    fun(argv[1]);
+    //fun(argv[1]);
 
     Point2 *p = new Point2[3];
     p[0] = Point2(-1.0, 1.0);
