@@ -1,6 +1,7 @@
 #include<iostream>
 #include"lagrange.hpp"
 #include<fstream>
+#include<algorithm>
 
 
 void fun(char * str)
