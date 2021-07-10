@@ -39,7 +39,7 @@ public class LagrangePolynom extends HttpServlet
         }
 
 
-        Process proc = Runtime.getRuntime().exec("ls -l webapps");
+        Process proc = Runtime.getRuntime().exec("ls -l webapps/calc_polynom");
 
         BufferedReader stdInput = new BufferedReader(new 
             InputStreamReader(proc.getInputStream()));
