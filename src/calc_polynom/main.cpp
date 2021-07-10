@@ -4,7 +4,7 @@
 
 int main(int argc, char ** argv)
 {
-    if (argc == 5)
+    if (argc != 5)
     {
 	std::cerr << "number of arguments != 5\n";
 	return 1;
