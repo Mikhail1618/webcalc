@@ -31,11 +31,27 @@ public class LagrangePolynom extends HttpServlet
         }
 	finally
 	{
-            writer.close();  
+            //writer.close();  
         }
 
 
-        Process process = Runtime.getRuntime().exec("ls -l");
+        Process proc = Runtime.getRuntime().exec("ls -l");
+
+        BufferedReader stdInput = new BufferedReader(new 
+            InputStreamReader(proc.getInputStream()));
+
+        BufferedReader stdError = new BufferedReader(new 
+            InputStreamReader(proc.getErrorStream()));
+
+       writer.println("<p>");
+       String s = null;
+       while ((s = stdInput.readLine()) != null)
+       {
+            writer.println(s);
+       }
+       writer.println(</p>);
+       writer.close();
+
     }
 
 }
