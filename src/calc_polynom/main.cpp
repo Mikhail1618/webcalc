@@ -48,7 +48,7 @@ Point2 * getPoints(char * str)
     p[k].y = std::stod(s);
 
 for (int i = 0; i < count; ++i)
-std::cout << p[i].x << " " << p[i].y << "\n";
+std::cout << " x " << p[i].x << " y " << p[i].y << "\n";
 
 
 
