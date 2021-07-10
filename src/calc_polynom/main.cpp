@@ -14,6 +14,9 @@ void fun(char * str)
         if (s.at(i) == ';')
             ++n;
 
+    std:string * mas = new std::string[n];
+
+
     std::string open = "(";
     std::string midle = ";";
     std::string close = ")";
@@ -22,15 +25,22 @@ void fun(char * str)
     s.erase(std::remove(s.begin(), s.end(), ')'), s.end());
     
     int pos = 0;
+    int j = 0;
     std::string token;
     while ((pos = s.find(';')) != std::string::npos)
     {
         token = s.substr(0, pos);
-        std::cout << token << std::endl;
+        mas[j] = token;
+        ++j;
+        //std::cout << token << std::endl;
         s.erase(0, pos + 1);
     }
+    mas[j] = s;
+    //std::cout << s << "\n";
 
-    std::cout << s << n << "\n";
+    for (int i = 0; i < n; i+=2)
+        std::cout << mas[i] << " " << mas[i+1] << "\n";
+
 }
 
 
