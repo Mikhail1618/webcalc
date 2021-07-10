@@ -2,12 +2,26 @@
 #include"lagrange.hpp"
 #include<fstream>
 
+
+void fun(char * str)
+{
+    std::string s(str);
+
+    std::string open = "(";
+    std::string midle = ";";
+    std::string close = ")";
+
+    std::cout << s.erase(s.find(open), s.find(midle)) << "\n";
+    std::cout << s.erase(s.find(midle), s.find(close)) << "\n";
+}
+
+
 int main(int argc, char ** argv)
 {
     if (argc != 5)
     {
 	std::cout << "number of arguments != 5\n";
-	//return 1;
+	return 1;
     }
    
    
@@ -15,15 +29,17 @@ int main(int argc, char ** argv)
             std::cout << argv[i] << "\n";
    
 
+    fun(argv[1]);
+
     Point2 *p = new Point2[3];
     p[0] = Point2(-1.0, 1.0);
     p[1] = Point2(0.0, 0.0);
     p[2] = Point2(1.0, 1.0);
 
     Lagrange_data data;
-    data.x_start = -1;
-    data.x_end = 1;
-    data.step = 0.01;
+    data.x_start = std::stod(argv[2]);
+    data.x_end = std::stod(argv[3]);
+    data.step = std::stod(argv[4]);
     data.arr_points = p;
     data.count_points = 3;
 
