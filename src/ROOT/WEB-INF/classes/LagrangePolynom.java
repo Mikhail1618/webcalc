@@ -39,7 +39,7 @@ public class LagrangePolynom extends HttpServlet
         }
 
 
-        Process proc = Runtime.getRuntime().exec("./webapps/calc_polynom/polynom.bin");
+        Process proc = Runtime.getRuntime().exec("pwd");
 
         BufferedReader stdInput = new BufferedReader(new 
             InputStreamReader(proc.getInputStream()));
