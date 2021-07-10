@@ -4,7 +4,7 @@
 #include<algorithm>
 
 
-Point * getPoints(char * str)
+Point2 * getPoints(char * str)
 {
     std::string s(str);
 
