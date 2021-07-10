@@ -11,8 +11,8 @@ void fun(char * str)
     std::string midle = ";";
     std::string close = ")";
 
-    std::cout << s.substr(s.find(open)+1, s.find(midle)) << "\n";
-    std::cout << s.substr(s.find(midle), s.find(close)-1) << "\n";
+    std::cout << s.substr(s.find(open)+1, s.find(midle)-1) << "\n";
+    std::cout << s.substr(s.find(midle)+1, s.find(close)-1) << "\n";
 }
 
 
