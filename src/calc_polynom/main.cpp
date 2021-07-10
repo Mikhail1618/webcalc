@@ -11,7 +11,7 @@ void fun(char * str)
     std::string midle = ";";
     std::string close = ")";
 
-    std::cout << s.erase(s.find(open), s.find(midle)) << "\n";
+    std::cout << s.erase(s.find(open)-1, s.find(midle)) << "\n";
     std::cout << s.erase(s.find(midle), s.find(close)) << "\n";
 }
 
