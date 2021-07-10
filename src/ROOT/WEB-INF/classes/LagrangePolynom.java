@@ -25,11 +25,11 @@ public class LagrangePolynom extends HttpServlet
          
         try
 	{
-            writer.println("<p>Nodes: " + nodes + "</p>");
-            writer.println("<p>Start: " + start + "</p>");
-            writer.println("<p>End: " + end + "</p>");
-            writer.println("<p>Step: " + step + "</p>");
-            writer.println("<p>Method: " + method[0] + "</p>");
+            //writer.println("<p>Nodes: " + nodes + "</p>");
+            //writer.println("<p>Start: " + start + "</p>");
+            //writer.println("<p>End: " + end + "</p>");
+            //writer.println("<p>Step: " + step + "</p>");
+            //writer.println("<p>Method: " + method[0] + "</p>");
         }
 	finally
 	{
@@ -37,7 +37,7 @@ public class LagrangePolynom extends HttpServlet
         }
 
 
-        Process proc = Runtime.getRuntime().exec("ls -l");
+        Process proc = Runtime.getRuntime().exec("webapps/calc_polynom/polynom.bin", nodes, start, end, step, method[0]);
 
         BufferedReader stdInput = new BufferedReader(new 
             InputStreamReader(proc.getInputStream()));
@@ -50,6 +50,7 @@ public class LagrangePolynom extends HttpServlet
        while ((s = stdInput.readLine()) != null)
        {
             writer.println(s);
+            writer.println("&#10;");
        }
        writer.println("</p>");
        writer.close();
