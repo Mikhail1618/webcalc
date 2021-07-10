@@ -32,6 +32,8 @@ Point2 * getPoints(char * str)
         std::cout << token.length() << "\n";
         s.erase(0, pos + 1);
     }
+    std::cout << token.length() << "\n";
+
 
 //for (int i = 0; i < count; ++i)
 //std::cout << " x-> " << p[i].x << " y-> " << p[i].y << "\n";
