@@ -1,5 +1,6 @@
 #include<iostream>
 #include"lagrange.hpp"
+#include<fstream>
 
 int main(int argc, char ** argv)
 {
@@ -30,6 +31,12 @@ int main(int argc, char ** argv)
 
     //for (double xi = data.x_start; xi < data.x_end + data.step; xi += data.step)
         //std::cout << "(" << xi << ";" << polynom.F(xi) << ")\n";
+
+    std::ofstream outfile ("test.txt");
+
+    outfile << argv[0] << std::endl;
+
+    outfile.close();
 
     return 0;
 }

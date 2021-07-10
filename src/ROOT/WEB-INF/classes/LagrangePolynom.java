@@ -23,7 +23,7 @@ public class LagrangePolynom extends HttpServlet
         String step = request.getParameter("Step");
         String[] method = request.getParameterValues("Method");
 
-        String[] commands = { "/usr/local/tomcat/webapps/calc_polynom/polynom.bin", ">file" };
+        String[] commands = { "/usr/local/tomcat/webapps/calc_polynom/polynom.bin" };
  
         try
 	{
@@ -58,6 +58,7 @@ public class LagrangePolynom extends HttpServlet
        {
            System.out.println(s);
        }
+
        writer.println("</p>");
        writer.close();
 
