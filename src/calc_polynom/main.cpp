@@ -34,7 +34,7 @@ Point2 * getPoints(char * str)
             std::cout << "p1->" << token.substr(pos2, token.length()-1) << "\n";
         }
         //std::cout << token << "\n";
-        //s.erase(0, pos + 1);
+        s.erase(0, pos + 1);
     }
     //std::cout << s << "\n";
 
