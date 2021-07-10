@@ -4,7 +4,7 @@
 #include<algorithm>
 
 
-std::string * substrs(char * str)
+Point * getPoints(char * str)
 {
     std::string s(str);
 
@@ -45,7 +45,7 @@ std::string * substrs(char * str)
     //for (int i = 0; i < n; i+=2)
         
         //std::cout << mas[i] << " " << mas[i+1] << "\n";
-    return mas;
+    return p;
 }
 
 
