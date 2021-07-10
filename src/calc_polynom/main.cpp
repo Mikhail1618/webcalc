@@ -28,7 +28,7 @@ Point2 * getPoints(char * str)
     while ((pos = s.find(';')) != std::string::npos)
     {
         token = s.substr(0, pos);
-std::cout << token << "\n";
+//std::cout << token << "\n";
         if (j%2 == 0)
             p[k].x = std::stod(token);
         else
@@ -41,8 +41,8 @@ std::cout << token << "\n";
     }
     p[k].y = std::stod(s);
 
-//for (int i = 0; i < count; ++i)
-//std::cout << p[i].x << " " << p[i].y << "\n";
+for (int i = 0; i < count; ++i)
+std::cout << p[i].x << " " << p[i].y << "\n";
 
 
 
