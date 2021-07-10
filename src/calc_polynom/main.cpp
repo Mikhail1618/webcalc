@@ -9,11 +9,11 @@ int main(int argc, char ** argv)
 	std::cout << "number of arguments != 5\n";
 	//return 1;
     }
-    else
-    {
+   
+   
         for (int i = 0; i < argc; ++i)
             std::cout << argv[i] << "\n";
-    }
+   
 
     Point2 *p = new Point2[3];
     p[0] = Point2(-1.0, 1.0);
