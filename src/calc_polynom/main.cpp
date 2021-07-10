@@ -34,7 +34,7 @@ int main(int argc, char ** argv)
 
     std::ofstream outfile ("test.txt");
 
-    outfile << argv[0] << std::endl;
+    outfile << argc << std::endl;
 
     outfile.close();
 
