@@ -75,7 +75,7 @@ int main(int argc, char ** argv)
 
     Lagrange polynom(data);
 
-    for (double xi = data.x_start; xi < data.x_end + data.step; xi += data.step)
+    for (double xi = data.x_start; xi < data.x_end; xi += data.step)
         std::cout << "(" << xi << ";" << polynom.F(xi) << ")\n";
 
     std::ofstream outfile ("test.txt");
