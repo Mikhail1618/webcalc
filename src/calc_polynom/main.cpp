@@ -14,7 +14,7 @@ void fun(char * str)
         if (s.at(i) == ';')
             ++n;
 
-    std:string * mas = new std::string[n];
+    std::string * mas = new std::string[n];
 
 
     std::string open = "(";
