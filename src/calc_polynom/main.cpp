@@ -42,6 +42,7 @@ std::cout << "x->" << p[k].x << "\n";
             p[k].y = std::stod(token);
             ++k;
             first = true;
+std::cout << "y->" << p[k].y << "\n";
         }
         ++j;
         s.erase(0, pos + 1);
