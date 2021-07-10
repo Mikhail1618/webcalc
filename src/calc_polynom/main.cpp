@@ -11,9 +11,9 @@ void fun(char * str)
     std::string midle = ";";
     std::string close = ")";
 
-s.erase(remove(s.begin(), s.end(), '('), s.end());
-s.erase(remove(s.begin(), s.end(), ';'), s.end());
-s.erase(remove(s.begin(), s.end(), ')'), s.end());
+s.erase(std::remove(s.begin(), s.end(), '('), s.end());
+s.erase(std::remove(s.begin(), s.end(), ';'), s.end());
+s.erase(std::remove(s.begin(), s.end(), ')'), s.end());
 
     std::cout << s << "\n";
 //    std::cout << s.substr(s.find(midle)+1, s.find(close)-1) << "\n";
