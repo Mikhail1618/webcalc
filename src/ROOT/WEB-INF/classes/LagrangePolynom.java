@@ -22,7 +22,9 @@ public class LagrangePolynom extends HttpServlet
         String end = request.getParameter("End");
         String step = request.getParameter("Step");
         String[] method = request.getParameterValues("Method");
-         
+
+        String[] commands = { "webapps/calc_polynom/polynom.bin", nodes, start, end, step, method[0] };
+ 
         try
 	{
             //writer.println("<p>Nodes: " + nodes + "</p>");
@@ -37,7 +39,7 @@ public class LagrangePolynom extends HttpServlet
         }
 
 
-        Process proc = Runtime.getRuntime().exec("webapps/calc_polynom/polynom.bin", nodes, start, end, step, method[0]);
+        Process proc = Runtime.getRuntime().exec(commands);
 
         BufferedReader stdInput = new BufferedReader(new 
             InputStreamReader(proc.getInputStream()));
