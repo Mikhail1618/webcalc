@@ -49,7 +49,7 @@ public class LagrangePolynom extends HttpServlet
        {
             writer.println(s);
        }
-       writer.println(</p>);
+       writer.println("</p>");
        writer.close();
 
     }
