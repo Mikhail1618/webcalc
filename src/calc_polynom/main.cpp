@@ -43,7 +43,9 @@ Point2 * getPoints(char * str)
     }
     pos2 = s.find(';');
     std::cout << "p1->" << s.substr(0, pos2) << "\n";
+    p[k].x = std::stod(s.substr(0, pos2));
     std::cout << "p1->" << s.substr(pos2+1, s.length()-1) << "\n";
+    p[k].y = std::stod(pos2+1, s.length()-1);
     //std::cout << s << "\n";
 
 
