@@ -32,12 +32,14 @@ public class LagrangePolynom extends HttpServlet
         proc2.waitFor();
 
         writer.println("<p>");
-        writer.println("var image = document.images[0];
-                        var downloadingImage = new Image();
-                        downloadingImage.onload = function(){
-                        image.src = this.src;   
-                        };
-                        downloadingImage.src = \"/function.png\";");
+        writer.println(" \
+                        var image = document.images[0]; \
+                        var downloadingImage = new Image(); \
+                        downloadingImage.onload = function(){ \
+                        image.src = this.src; \
+                        }; \
+                        downloadingImage.src = \"/function.png\"; \
+                        ");
         //writer.println("<img src=\"/function.png\" />");
         writer.println("</p>");
 
