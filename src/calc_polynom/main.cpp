@@ -32,7 +32,7 @@ int main(int argc, char ** argv)
     for (double xi = data.x_start; xi < data.x_end; xi += data.step)
     {
         outfile << xi << "\t\t" << polynom.F(xi) << "\n";
-        std::cout << "(" << xi << ";" << polynom.F(xi) << ")\n";
+        //std::cout << "(" << xi << ";" << polynom.F(xi) << ")\n";
     }
     outfile.close();
 

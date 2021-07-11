@@ -48,6 +48,7 @@ public class LagrangePolynom extends HttpServlet
        writer.println("</p>");
 
        writer.println("<img src=\"/function.png\" />");
+       writer.println("<a href=\"/function.png\">function.png</a>");
 
        writer.close();
 
