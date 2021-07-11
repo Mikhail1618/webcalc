@@ -1,7 +1,6 @@
-#pragma once
 #ifndef LAGRANGE_H
 #define LAGRANGE_H
-#include<iostream>
+
 
 struct Point2
 {
@@ -37,8 +36,6 @@ public:
 
         double F(double x);
         
-//private:
-
 };
 
 #endif // !LAGRANGE_H

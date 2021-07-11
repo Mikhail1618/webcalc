@@ -1,5 +1,5 @@
 #include"lagrange.hpp"
-#include<iostream>
+
 
 double Lagrange::F(double x)
 {
