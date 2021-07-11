@@ -1,7 +1,7 @@
 #ifndef HANDLER_STR_HPP
 #define HANDLER_STR_HPP
 
-#include<string>
+#include<iostream>
 #include"lagrange.hpp"
 
 
