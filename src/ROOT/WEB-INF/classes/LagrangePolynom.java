@@ -23,10 +23,13 @@ public class LagrangePolynom extends HttpServlet
         String step = request.getParameter("Step");
         String[] method = request.getParameterValues("Method");
 
-        String[] commands = { "polynom.bin", nodes, start, end, step};
- 
+
+        String[] commands = { "polynom.bin", nodes, start, end, step}; 
         Process proc = Runtime.getRuntime().exec(commands);
+        proc.waitFor();
+
         Process proc2 = Runtime.getRuntime().exec("gnuplot < settings_plot");
+        proc2.waitFor();
 
         writer.println("<p>");
         writer.println("<img src=\"/function.png\" />");
