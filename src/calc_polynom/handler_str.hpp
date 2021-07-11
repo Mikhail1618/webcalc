@@ -2,6 +2,7 @@
 #define HANDLER_STR_HPP
 
 #include<iostream>
+#include<algorithm>
 #include"lagrange.hpp"
 
 

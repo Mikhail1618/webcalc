@@ -1,6 +1,5 @@
 #include<iostream>
 #include<fstream>
-#include<algorithm>
 #include"lagrange.hpp"
 #include"handler_str.hpp"
 
