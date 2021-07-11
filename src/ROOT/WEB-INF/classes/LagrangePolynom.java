@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LagrangePolynom extends HttpServlet
 {  
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-            throws ServletException, IOException 
+            throws ServletException, IOException, Exception
     {      
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
