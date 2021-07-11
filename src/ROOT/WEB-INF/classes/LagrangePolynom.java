@@ -26,7 +26,7 @@ public class LagrangePolynom extends HttpServlet
         String[] commands = { "polynom.bin", nodes, start, end, step};
  
         Process proc = Runtime.getRuntime().exec(commands);
-
+        Process proc2 = Runtime.getRuntime().exec("gnuplot < settings_plot");
 
         writer.println("<p>");
         writer.println("<img src=\"/function.png\" />");
