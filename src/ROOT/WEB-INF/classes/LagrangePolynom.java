@@ -27,31 +27,16 @@ public class LagrangePolynom extends HttpServlet
  
         Process proc = Runtime.getRuntime().exec(commands);
 
-        BufferedReader stdInput = new BufferedReader(new 
-            InputStreamReader(proc.getInputStream()));
 
-        BufferedReader stdError = new BufferedReader(new 
-            InputStreamReader(proc.getErrorStream()));
+        writer.println("<p>");
+        writer.println("<img src=\"/function.png\" />");
+        writer.println("</p>");
 
-       writer.println("<p>");
-       String s = null;
-       while ((s = stdInput.readLine()) != null)
-       {
-            writer.println(s);
-            //writer.println("<br>");//"&#10;");
-       }
-       while ((s = stdError.readLine()) != null)
-       {
-           System.out.println(s);
-       }
+        writer.println("<p>");
+        writer.println("<a href=\"/function.png\">function.png</a>");
+        writer.println("</p>");
 
-       writer.println("</p>");
-
-       writer.println("<img src=\"/function.png\" />");
-       writer.println("<a href=\"/function.png\">function.png</a>");
-
-       writer.close();
-
+        writer.close();
     }
 
 }
