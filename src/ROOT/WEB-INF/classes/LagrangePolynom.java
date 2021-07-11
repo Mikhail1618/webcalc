@@ -23,30 +23,34 @@ public class LagrangePolynom extends HttpServlet
         String step = request.getParameter("Step");
         String[] method = request.getParameterValues("Method");
 
+        try
+        {
+            String[] commands = { "polynom.bin", nodes, start, end, step}; 
+            Process proc = Runtime.getRuntime().exec(commands);
+            proc.waitFor();
 
-        String[] commands = { "polynom.bin", nodes, start, end, step}; 
-        Process proc = Runtime.getRuntime().exec(commands);
-        proc.waitFor();
+            Process proc2 = Runtime.getRuntime().exec("gnuplot < settings_plot");
+            proc2.waitFor();
 
-        Process proc2 = Runtime.getRuntime().exec("gnuplot < settings_plot");
-        proc2.waitFor();
+            writer.println("<p>");
+            writer.println("var image = document.images[0];" +
+                           "var downloadingImage = new Image();" +
+                           "downloadingImage.onload = function(){" +
+                           "image.src = this.src;" +
+                           "};" +
+                           "downloadingImage.src = \"/function.png\";");
 
-        writer.println("<p>");
-        writer.println("var image = document.images[0];" +
-                       "var downloadingImage = new Image();" +
-                       "downloadingImage.onload = function(){" +
-                       "image.src = this.src;" +
-                       "};" +
-                       "downloadingImage.src = \"/function.png\";");
+            //writer.println("<img src=\"/function.png\" />");
+            writer.println("</p>");
 
-        //writer.println("<img src=\"/function.png\" />");
-        writer.println("</p>");
-
-        writer.println("<p>");
-        writer.println("<a href=\"/function.png\">function.png</a>");
-        writer.println("</p>");
-
-        writer.close();
+            writer.println("<p>");
+            writer.println("<a href=\"/function.png\">function.png</a>");
+            writer.println("</p>");
+        }
+        finally
+        {
+            writer.close();
+        }
     }
 
 }
