@@ -29,7 +29,7 @@ public class LagrangePolynom extends HttpServlet
             Process proc = Runtime.getRuntime().exec(commands);
             proc.waitFor();
 
-            Process proc2 = Runtime.getRuntime().exec("gnuplot < settings_plot");
+            Process proc2 = Runtime.getRuntime().exec("gnuplot < webapps/conf/settings_plot");
             proc2.waitFor();
 
             writer.println("<p>");
