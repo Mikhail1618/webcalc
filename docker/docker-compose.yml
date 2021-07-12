@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+
+ srv:
+  build: server/
+  image: mikhai1/webcalc:tomcat-9.0.50-jdk11
+  container_name: webcalc
+  ports:
+   - "8084:8080"
+  volumes:
+   - webcalc:/usr/local/tomcat/webapps/:rw
+   - keys_jenkins_to_webcalc:/keys/:rw
+  networks:
+   jenkins_net:
+    ipv4_address: 172.14.0.3
+
+
+volumes:
+ webcalc:
+  external: true
+ keys_jenkins_to_webcalc:
+  external: true
+
+networks:
+ jenkins_net:
+  external: true
